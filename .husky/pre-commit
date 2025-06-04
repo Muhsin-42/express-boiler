@@ -1,0 +1,13 @@
+# echo "🔍 Running pre-commit hooks..."
+
+# # Run lint-staged with stricter settings
+
+# echo "✅ Pre-commit checks passed!"
+
+
+npx pretty-quick --staged
+
+npx lint-staged --verbose --no-stash || {
+  echo "❌ lint-staged failed. Please fix the issues above and try committing again."
+  exit 1
+}

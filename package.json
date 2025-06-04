@@ -1,0 +1,90 @@
+{
+  "name": "social-notch-api",
+  "version": "1.0.0",
+  "description": "API for Social Notch",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "nodemon",
+    "build": "tsc",
+    "seed": "ts-node src/scripts/seed.ts",
+    "lint": "eslint --ext .js,.ts src",
+    "lint:fix": "eslint --ext .js,.ts src --fix",
+    "format": "prettier --write \"src/**/*.{js,ts,json}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,json}\"",
+    "fix-all": "npm run lint:fix && npm run format",
+    "prepare": "husky"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.772.0",
+    "axios": "^1.8.4",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.1.5",
+    "handlebars": "^4.7.8",
+    "helmet": "^7.1.0",
+    "joi": "^17.12.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.1",
+    "morgan": "^1.10.0",
+    "multer": "1.4.5-lts.2",
+    "node-cron": "^3.0.3",
+    "puppeteer": "^24.7.2",
+    "puppeteer-core": "^24.7.2",
+    "sharp": "^0.33.5",
+    "sib-api-v3-sdk": "^8.5.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.26.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/compression": "^1.7.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.15.17",
+    "@types/node-cron": "^3.0.11",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.4.0",
+    "globals": "^16.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.5.3",
+    "supertest": "^6.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.32.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "ts-node src/app.ts"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json}": [
+      "prettier --write"
+    ]
+  }
+}

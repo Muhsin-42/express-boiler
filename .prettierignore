@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+public/
+package-lock.json
+yarn.lock
+bun.lock
+pnpm-lock.yaml
+.vscode/
+logs
+.husky
+.env*
+.env.*
